@@ -56,6 +56,10 @@ public class Employee {
 	
 	@Column
 	private double hoursPerWeek;
+	
+	public Long getId() {
+		return id;
+	}
 
 	public String getFirstName() {
 		return firstName;

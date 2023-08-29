@@ -50,6 +50,7 @@ public class EmployeeController {
 	@PatchMapping("/{id}")
 	public ResponseEntity<Employee> updateById(@PathVariable Long id, @Valid @RequestBody UpdateEmployeeDTO data) {
 		Optional<Employee> maybeUpdated = this.employeeService.updateById(id, data);
+
 		if(maybeUpdated.isEmpty()) {
 			throw new NotFoundException(String.format("Employee with id: %s not found, could not update", id));
 		}
